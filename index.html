@@ -403,9 +403,36 @@
 
     @media (max-width: 560px) {
       .nav-brand { font-size: 20px; }
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: 10px; }
+      .nav-links { gap: 10px; }
+      .nav-links a {
+        font-size: 9px;
+        letter-spacing: 0.06em;
+      }
       main { padding: 76px 16px 40px; }
+
+      /* Stack book entries vertically on small screens */
+      .book-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .book-cover-thumb,
+      .book-cover-placeholder {
+        width: 140px;
+      }
+      .book-entry-links {
+        justify-content: center;
+      }
+
+      /* Stack writing/event items vertically on small screens */
+      .writing-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .venue {
+        white-space: normal;
+      }
     }
   </style>
 </head>
