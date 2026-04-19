@@ -59,8 +59,10 @@
 
     /* ── NAV ── */
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -68,7 +70,6 @@
       padding: 0 52px;
       height: 52px;
       background: var(--bg);
-      flex-shrink: 0;
     }
 
     .nav-brand {
@@ -104,7 +105,7 @@
       display: grid;
       grid-template-columns: 42% 1fr;
       align-items: start;
-      padding: 40px 52px 64px;
+      padding: 92px 52px 64px;
       gap: 72px;
       max-width: 1200px;
       margin: 0 auto;
@@ -381,17 +382,12 @@
     @media (max-width: 900px) {
       nav {
         padding: 0 24px;
-        height: auto;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        flex-wrap: wrap;
-        gap: 12px;
       }
       .nav-links { gap: 20px; }
 
       main {
         grid-template-columns: 1fr;
-        padding: 32px 24px 48px;
+        padding: 84px 24px 48px;
         gap: 32px;
       }
 
@@ -409,7 +405,7 @@
       .nav-brand { font-size: 20px; }
       .nav-links { gap: 14px; }
       .nav-links a { font-size: 10px; }
-      main { padding: 0 16px 40px; }
+      main { padding: 76px 16px 40px; }
     }
   </style>
 </head>
