@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benjamin R. Siegel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "bgColor": "#f2ede8",
+  "accentColor": "#40093c",
+  "photoSide": "left"
+}/*EDITMODE-END*/;
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f2ede8;
+  --plum: #40093c;
+  --ink: #1c1410;
+  --mid: #6b5e58;
+  --light: #a09490;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 52px;
+  background: var(--bg);
+  flex-shrink: 0;
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--plum); }
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  align-items: start;
+  padding: 0 52px 64px;
+  gap: 72px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── PHOTO ── */
+.photo-col {
+  position: sticky;
+  top: 24px;
+}
+
+.photo-wrap {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #ddd9d1;
+}
+
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% top;
+  display: block;
+}
+
+.photo-credit {
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.photo-links {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.photo-links a {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  transition: color 0.2s;
+}
+.photo-links a:hover { color: var(--plum); }
+.photo-links a svg { opacity: 0.55; transition: opacity 0.2s; }
+.photo-links a:hover svg { opacity: 1; }
+
+/* ── BIO ── */
+.bio-col {
+  padding-top: 16px;
+}
+
+.bio-hello {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 28px;
+  text-wrap: pretty;
+}
+
+.bio-hello strong {
+  font-family: var(--serif);
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.bio-hello strong {
+  font-weight: 500;
+}
+
+.bio-hello a, .bio-text a {
+  color: var(--plum);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+.bio-hello a:hover, .bio-text a:hover { opacity: 0.7; }
+
+.bio-text {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--mid);
+  text-wrap: pretty;
+}
+
+.bio-text p { margin-bottom: 22px; }
+.bio-text p:last-child { margin-bottom: 0; }
+
+/* ── BOOKS ── */
+.books-section {
+  margin-top: 52px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(28,20,16,0.12);
+}
+
+.books-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 28px;
+}
+
+.book-entry {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(28,20,16,0.08);
+}
+.book-entry:last-child { border-bottom: none; margin-bottom: 0; }
+
+.book-cover-thumb {
+  width: 60px;
+  flex-shrink: 0;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #ccc8c0;
+}
+.book-cover-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.book-entry-text {}
+
+.book-entry-press {
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 5px;
+}
+
+.book-entry-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.book-entry-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--mid);
+  margin-bottom: 10px;
+}
+
+.book-entry-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.book-entry-links a {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--plum);
+  text-decoration: none;
+  border-bottom: 1px solid var(--plum);
+  padding-bottom: 1px;
+  transition: opacity 0.2s;
+}
+.book-entry-links a:hover { opacity: 0.65; }
+
+/* ── WRITING ── */
+.writing-section {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(28,20,16,0.12);
+}
+
+.writing-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 20px;
+}
+
+.writing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.writing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(28,20,16,0.07);
+}
+.writing-item:last-child { border-bottom: none; }
+
+.writing-item a {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+  flex: 1;
+}
+.writing-item a:hover { color: var(--plum); }
+
+.writing-item .venue {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 20px 52px;
+  border-top: 1px solid rgba(28,20,16,0.1);
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+/* ── PRAISE ── */
+.praise-quote {
+  border-left: 2px solid rgba(64,9,60,0.2);
+  padding-left: 18px;
+}
+.praise-quote p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.praise-quote cite {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+  font-style: normal;
+}
+
+/* ── TWEAKS ── */
+#tweaks-panel {
+  display: none;
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: #fff;
+  border: 1px solid #e0dbd8;
+  padding: 20px 24px;
+  z-index: 300;
+  width: 220px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  font-family: var(--sans);
+  font-size: 12px;
+}
+#tweaks-panel h4 {
+  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 16px; color: var(--ink);
+}
+.tweak-row { margin-bottom: 13px; }
+.tweak-row label { display: block; color: var(--mid); margin-bottom: 4px; font-size: 11px; }
+.tweak-row input, .tweak-row select {
+  width: 100%; padding: 6px 8px; border: 1px solid #ddd;
+  font-family: inherit; font-size: 12px; background: #fafafa;
+}
+.tweak-row input[type="color"] { height: 30px; padding: 2px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">Benjamin R. Siegel</a>
+  <ul class="nav-links">
+    <li><a href="#books">Books</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="mailto:siegelb@bu.edu">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="photo-col">
+    <div class="photo-wrap">
+      <img src="photo-informal.jpg" alt="Benjamin R. Siegel">
+    </div>
+    <div class="photo-links">
+      <a href="https://www.bu.edu/history/profile/benjamin-siegel/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 21h18M3 10h18M3 7l9-4 9 4M5 10v11M19 10v11M9 10v11M15 10v11"/>
+        </svg>
+        Faculty Page
+      </a>
+      <a href="https://www.instagram.com/benjaminsiegel/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="5"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="https://www.linkedin.com/in/benjamin-siegel29/" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="4"/>
+          <line x1="8" y1="11" x2="8" y2="17"/>
+          <line x1="8" y1="7" x2="8" y2="8"/>
+          <line x1="12" y1="17" x2="12" y2="11"/>
+          <path d="M12 13a3 3 0 0 1 6 0v4"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <div class="bio-col">
+    <p class="bio-hello">
+      I'm a writer and historian at Boston University. I uncover the commodity chains that have shaped modern life — from the power of empires to the drugs in our medicine cabinets and the food on our plates.
+    </p>
+
+    <div class="bio-text">
+      <p>My new book, <a href="http://www.marketsofpain.com" target="_blank"><em>Markets of Pain: Opium, Capitalism, and the Global History of Painkillers</em></a> (Oxford University Press, 2026), is the sweeping story of how licit opium built empires, shaped global capitalism, and became the harbinger of today's opioid crisis — drawing on archives from India, Turkey, Australia, Europe, and the United States.</p>
+
+      <p>My previous book, <a href="https://www.cambridge.org/core/books/hungry-nation/106C8887E38290B84E2A4952F78EBACE" target="_blank"><em>Hungry Nation: Food, Famine, and the Making of Modern India</em></a> (Cambridge University Press, 2018), traces how food lay at the heart of India's postcolonial nation-building project.</p>
+
+      <p>I'm now working on <em>The Price of Protein</em> (forthcoming from Ecco in the US and Monoray in the UK) — a blend of history and reportage revealing how Big Food manufactured our hunger for protein, and how its abundance is reshaping climate, labor, geopolitics, and identity.</p>
+
+      <p>My writing has appeared in <em>Vice</em>, <em>Public Books</em>, and <em>Marginalia</em>, and I'm a frequent guest on podcasts and radio programs. I've presented research across the US, Canada, the UK, India, Pakistan, China, Germany, Switzerland, and Italy.</p>
+
+      <p>I was trained at Yale and Harvard and have held fellowships at the Harvard Academy for International and Area Studies and Yale's Program in Agrarian Studies.</p>
+
+      <p>I live with my family and too many bicycles in Jamaica Plain, Mass., and Lecco, Italy.</p>
+
+      <p>My agent is <a href="https://calligraphagency.com" target="_blank">Sarah Khalil</a> at Calligraph; for other inquiries, please <a href="mailto:siegelb@bu.edu">write me directly</a>.</p>
+    </div>
+
+    <!-- BOOKS -->
+    <div class="books-section" id="books">
+      <p class="books-label">Books</p>
+
+      <div class="book-entry">
+        <div class="book-cover-thumb">
+          <img src="https://www.benjaminrsiegel.com/markets-of-pain-cover.jpg" alt="Markets of Pain" onerror="this.style.background='#bbb8b0'">
+        </div>
+        <div class="book-entry-text">
+          <p class="book-entry-press">Oxford University Press · 2026</p>
+          <p class="book-entry-title">Markets of Pain</p>
+          <p class="book-entry-sub">Opium, Capitalism, and the Global History of Painkillers</p>
+          <div class="book-entry-links">
+            <a href="http://www.marketsofpain.com" target="_blank">Book Website</a>
+            <a href="https://global.oup.com/academic/product/markets-of-pain-9780197527825" target="_blank">Oxford UP</a>
+            <a href="https://www.amazon.com/Markets-Pain-Capitalism-History-Painkillers/dp/0197527825" target="_blank">Amazon</a>
+            <a href="https://bookshop.org/p/books/markets-of-pain-opium-capitalism-and-the-global-history-of-painkillers-associate-professor-of-history-benjamin-robert-siegel/e89ecfc619100379" target="_blank">Bookshop</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-entry">
+        <div class="book-cover-thumb">
+          <img src="https://www.benjaminrsiegel.com/hungry-nation-cover.jpg" alt="Hungry Nation" onerror="this.style.background='#bbb8b0'">
+        </div>
+        <div class="book-entry-text">
+          <p class="book-entry-press">Cambridge University Press · 2018</p>
+          <p class="book-entry-title">Hungry Nation</p>
+          <p class="book-entry-sub">Food, Famine, and the Making of Modern India</p>
+          <div class="book-entry-links">
+            <a href="https://www.cambridge.org/core/books/hungry-nation/106C8887E38290B84E2A4952F78EBACE" target="_blank">Cambridge UP</a>
+            <a href="https://www.amazon.com/Hungry-Nation-Famine-Making-Modern/dp/1108441963" target="_blank">Amazon</a>
+            <a href="https://bookshop.org/p/books/hungry-nation-benjamin-robert-siegel/d3ada54dca7eb70c" target="_blank">Bookshop</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-entry">
+        <div class="book-cover-thumb" style="background:repeating-linear-gradient(135deg,#ddd9d0 0,#ddd9d0 1px,transparent 1px,transparent 10px),#d5d0c8;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:8px;letter-spacing:0.08em;text-transform:uppercase;color:var(--light);text-align:center;padding:8px;">Cover TBD</div>
+        <div class="book-entry-text">
+          <p class="book-entry-press">Ecco (US) · Monoray (UK) · Forthcoming</p>
+          <p class="book-entry-title">The Price of Protein</p>
+          <p class="book-entry-sub">A global history of how Big Food manufactured our hunger — and what it costs us</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="writing-section" id="events">
+      <p class="writing-label">Events</p>
+      <div class="writing-list">
+        <div class="writing-item">
+          <span style="font-family:var(--serif);font-size:18px;color:var(--ink);">Book Launch: <em>Markets of Pain</em></span>
+          <span class="venue">April 2026 · TBD</span>
+        </div>
+        <div class="writing-item">
+          <span style="font-family:var(--serif);font-size:18px;color:var(--ink);">"Automatic for the People?: Labor, Machines, and Ecology in Modern India"</span>
+          <span class="venue">IIT Bombay · May 2025</span>
+        </div>
+        <div class="writing-item">
+          <span style="font-family:var(--serif);font-size:18px;color:var(--ink);">"Automatic for the People?"</span>
+          <span class="venue">U Penn CASI · Feb 2025</span>
+        </div>
+        <div class="writing-item">
+          <span style="font-family:var(--serif);font-size:18px;color:var(--ink);">"How Pain Came to Matter"</span>
+          <span class="venue">Harvard Medical School · May 2024</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESSAYS -->
+    <div class="writing-section" id="writing">
+      <p class="writing-label">Essays &amp; Features</p>
+      <div class="writing-list">
+        <div class="writing-item">
+          <a href="https://www.vice.com/en/article/indian-drugs-american-addiction/" target="_blank">The US Opioid Crisis Started in India</a>
+          <span class="venue">Vice</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://www.publicbooks.org/whither-agriculture-the-green-revolution-50/" target="_blank">The Green Revolution at 50</a>
+          <span class="venue">Public Books</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://themarginaliareview.com/malala/" target="_blank">Before Malala</a>
+          <span class="venue">Marginalia</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://doi.org/10.1093/ahr/rhaa233" target="_blank">Global Imaginaries of Indian Development</a>
+          <span class="venue">Am. Historical Review</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://academic.oup.com/envhis/advance-article/doi/10.1093/envhis/emaa060/6032735" target="_blank">Weeds and Power in Indian Environmental History</a>
+          <span class="venue">Environmental History</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIA -->
+    <div class="writing-section" id="media">
+      <p class="writing-label">Media Appearances</p>
+      <div class="writing-list">
+        <div class="writing-item">
+          <a href="https://podcasts.apple.com/us/podcast/food-in-post-independence-india/id612994662?i=1000526259202" target="_blank">Food in Post-Independence India</a>
+          <span class="venue">Eat This!</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://newbooksnetwork.com/benjamin-r-siegel-hungry-nation-food-famine-and-the-making-of-modern-india-cambridge-up-2018/" target="_blank">Hungry Nation</a>
+          <span class="venue">New Books Network</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://soundcloud.com/syntalk/tkop-the-kinds-of-pain-syntalk" target="_blank">The Kinds of Pain</a>
+          <span class="venue">Syntalk</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://creators.spotify.com/pod/profile/ramblingsofasikh/episodes/From-Bengal-Famine-To-The-Green-Revolution--Indias-Food-Security--Prof--Benjamin-Siegel-e2m99m1/a-abeofun" target="_blank">From Bengal Famine to the Green Revolution</a>
+          <span class="venue">Ramblings of a Sikh</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRAISE -->
+    <div class="writing-section" id="praise">
+      <p class="writing-label">Praise for Markets of Pain</p>
+      <div style="display:flex;flex-direction:column;gap:20px;margin-top:4px;">
+        <blockquote class="praise-quote">
+          <p>&#8220;Siegel turns opium history into a parable of creative destruction. He shows how a peasant crop that sustained empires devolved into a &#8216;zombie commodity&#8217; struggling to survive in a world transformed by capitalism and novel technologies. One puts this original, ambitious, and often surprising book down thinking about much more than opium.&#8221;</p>
+          <cite>David T. Courtwright, author of <em>Forces of Habit: Drugs and the Making of the Modern World</em></cite>
+        </blockquote>
+        <blockquote class="praise-quote">
+          <p>&#8220;With a fresh analysis of opium as a global agricultural commodity rather than as a moral object, Markets of Pain reveals how the age of empires lastingly shaped a political economy that delivered too many opioids to some, and not enough to others.&#8221;</p>
+          <cite>David Herzberg, author of <em>White Market Drugs: Big Pharma and the Hidden History of Addiction in America</em></cite>
+        </blockquote>
+        <blockquote class="praise-quote">
+          <p>&#8220;From poppy fields to pharmaceutical labs, Siegel&#8217;s ambitious book shows us how marginalized opium-producing peasants were foundational to the modern global pharmaceutical industry. This book is essential reading to understand how the centuries-old, insatiable demand for opium and its derivatives has a longer and broader history.&#8221;</p>
+          <cite>Gabriela Soto Laveaga, Harvard University</cite>
+        </blockquote>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>© 2026 Benjamin R. Siegel</footer>
+
+<!-- TWEAKS -->
+<div id="tweaks-panel">
+  <h4>Tweaks</h4>
+  <div class="tweak-row">
+    <label>Accent Color</label>
+    <input type="color" id="tw-accent" value="#40093c" oninput="applyTweaks()">
+  </div>
+  <div class="tweak-row">
+    <label>Background</label>
+    <select id="tw-bg" onchange="applyTweaks()">
+      <option value="#f2ede8">Warm Blush</option>
+      <option value="#f7f3ec">Cream</option>
+      <option value="#f0f0ec">Cool Linen</option>
+      <option value="#ffffff">White</option>
+    </select>
+  </div>
+  <div class="tweak-row">
+    <label>Bio Font Size</label>
+    <select id="tw-fontsize" onchange="applyTweaks()">
+      <option value="clamp(18px,1.6vw,22px)">Default</option>
+      <option value="clamp(16px,1.4vw,19px)">Smaller</option>
+      <option value="clamp(20px,1.8vw,25px)">Larger</option>
+    </select>
+  </div>
+</div>
+
+<script>
+function applyTweaks() {
+  const accent = document.getElementById('tw-accent').value;
+  const bg = document.getElementById('tw-bg').value;
+  const fs = document.getElementById('tw-fontsize').value;
+  document.documentElement.style.setProperty('--plum', accent);
+  document.documentElement.style.setProperty('--bg', bg);
+  document.querySelector('.bio-hello').style.fontSize = '';
+  document.documentElement.style.setProperty('--bio-size', fs);
+  window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accentColor: accent, bgColor: bg } }, '*');
+}
+
+window.addEventListener('message', e => {
+  if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaks-panel').style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+});
+window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+
+const s = localStorage.getItem('brs-v3-scroll');
+if (s) window.scrollTo(0, parseInt(s));
+window.addEventListener('scroll', () => localStorage.setItem('brs-v3-scroll', window.scrollY));
+</script>
+
+</body>
+</html>
