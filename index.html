@@ -434,6 +434,186 @@
         white-space: normal;
       }
     }
+
+    /* ── MAILERLITE FORM ── */
+    /* Loader animation */
+    .ml-form-embedSubmitLoad {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    .ml-form-embedSubmitLoad:after {
+      content: " ";
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 1px;
+      border-radius: 50%;
+      border: 4px solid var(--plum);
+      border-color: var(--plum) var(--plum) var(--plum) transparent;
+      animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+    }
+
+    @keyframes ml-form-embedSubmitLoad {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Form container */
+    #mlb2-41199615.ml-form-embedContainer {
+      box-sizing: border-box;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: static;
+      max-width: 450px;
+    }
+
+    #mlb2-41199615 h4,
+    #mlb2-41199615 p,
+    #mlb2-41199615 button {
+      text-transform: none !important;
+      letter-spacing: normal !important;
+    }
+
+    #mlb2-41199615 .ml-form-embedWrapper {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #mlb2-41199615 .ml-form-embedBody,
+    #mlb2-41199615 .ml-form-successBody {
+      padding: 0;
+      margin: 0;
+    }
+
+    #mlb2-41199615 .ml-form-embedContent {
+      margin-bottom: 1.5rem;
+    }
+
+    #mlb2-41199615 .ml-form-embedContent h4 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.3;
+      margin: 0 0 0.5rem 0;
+      padding: 0;
+    }
+
+    #mlb2-41199615 .ml-form-embedContent p {
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.5vw, 20px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--mid);
+      margin: 0;
+      padding: 0;
+    }
+
+    #mlb2-41199615 form {
+      margin: 0;
+      padding: 0;
+    }
+
+    #mlb2-41199615 .ml-form-formContent,
+    #mlb2-41199615 .ml-form-fieldRow {
+      margin: 0 0 1rem 0;
+      padding: 0;
+    }
+
+    #mlb2-41199615 .ml-form-fieldRow input {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--light);
+      border-radius: 0;
+      padding: 0.5rem 0;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+
+    #mlb2-41199615 .ml-form-fieldRow input::placeholder {
+      color: var(--light);
+      opacity: 0.6;
+    }
+
+    #mlb2-41199615 .ml-form-fieldRow input:focus {
+      outline: none;
+      border-bottom-color: var(--plum);
+    }
+
+    #mlb2-41199615 .ml-form-embedSubmit {
+      margin: 1rem 0 0 0;
+      padding: 0;
+    }
+
+    #mlb2-41199615 .ml-form-embedSubmit button {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      color: var(--plum);
+      background: transparent;
+      border: 1px solid var(--plum);
+      border-radius: 0;
+      padding: 0.6rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-sizing: border-box;
+    }
+
+    #mlb2-41199615 .ml-form-embedSubmit button:hover {
+      background: var(--plum);
+      color: var(--bg);
+    }
+
+    #mlb2-41199615 .ml-form-embedSubmit button.loading {
+      display: none;
+    }
+
+    .ml-error input {
+      border-bottom-color: #b00 !important;
+    }
+
+    /* Success message */
+    #mlb2-41199615 .ml-form-successContent h4 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.3;
+      margin: 0 0 0.5rem 0;
+    }
+
+    #mlb2-41199615 .ml-form-successContent p {
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.5vw, 20px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--mid);
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -445,7 +625,7 @@
     <li><a href="#writing">Writing</a></li>
     <li><a href="#media">Media</a></li>
     <li><a href="#events">Talks</a></li>
-    <li><a href="mailto:siegelb@bu.edu">Contact</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -655,6 +835,60 @@
           <span class="venue"><em>Syntalk</em> · September 2017</span>
         </div>
       </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="writing-section" id="contact">
+      <p class="section-label">Contact</p>
+
+      <div id="mlb2-41199615" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41199615">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent">
+                <h4>Stay in touch</h4>
+                <p>Occasional updates when I publish something new.</p>
+              </div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2334730/forms/187085403180762918/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Subscribe</button>
+                  <button disabled="disabled" style="display: none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent">
+                <h4>Thank you</h4>
+                <p>You're on the list. I'll be in touch when there's something to share.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function ml_webform_success_41199615() {
+          var $ = ml_jQuery || jQuery;
+          $('.ml-subscribe-form-41199615 .row-success').show();
+          $('.ml-subscribe-form-41199615 .row-form').hide();
+        }
+      </script>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+      <script>
+        fetch("https://assets.mailerlite.com/jsonp/2334730/forms/187085403180762918/takel")
+      </script>
     </div>
 
   </div>
