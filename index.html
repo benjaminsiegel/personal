@@ -337,6 +337,15 @@
       flex-shrink: 0;
     }
 
+    #events .venue { white-space: normal; max-width: 40%; text-align: right; }
+    .upcoming-talks .writing-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+    #events .upcoming-talks .venue { max-width: none; text-align: left; line-height: 1.6; }
+    .talk-details { font-family: var(--serif); font-size: 16px; color: var(--mid); line-height: 1.5; }
+    .recent-talks-label { margin-top: 30px; }
+    @media (max-width: 560px) {
+      #events .venue { max-width: none; text-align: left; line-height: 1.6; }
+    }
+
     /* ── PRAISE ── */
     .praise-list {
       display: flex;
@@ -596,6 +605,18 @@
       border-bottom-color: #b00 !important;
     }
 
+    #mlb2-41199615 .d-none { display: none; }
+    #mlb2-41199615 .ml-server-error,
+    #mlb2-41199615 .ml-field-error-message {
+      font-family: var(--sans);
+      font-size: 13px;
+      line-height: 1.5;
+      color: #9b2525;
+    }
+    #mlb2-41199615 .ml-server-error { margin: 12px 0; }
+    #mlb2-41199615 .ml-field-error-message:empty { display: none; }
+    #mlb2-41199615 .signup-note { font-family: var(--serif); font-size: 15px; color: var(--mid); margin-top: 12px; }
+
     /* Success message */
     #mlb2-41199615 .ml-form-successContent h4 {
       font-family: var(--serif);
@@ -686,6 +707,15 @@
       <p class="section-label">Books</p>
 
       <div class="book-entry">
+        <div class="book-cover-placeholder">Cover TBD</div>
+        <div class="book-entry-text">
+          <p class="book-entry-press">Ecco (US) · Monoray (UK) · Forthcoming</p>
+          <p class="book-entry-title">The Price of Protein</p>
+          <p class="book-entry-sub">A global history of how Big Food manufactured our hunger — and what it costs us</p>
+        </div>
+      </div>
+
+      <div class="book-entry">
         <div class="book-cover-thumb">
           <img src="markets-of-pain-cover.jpg" alt="Markets of Pain">
         </div>
@@ -717,21 +747,34 @@
           </div>
         </div>
       </div>
-
-      <div class="book-entry">
-        <div class="book-cover-placeholder">Cover TBD</div>
-        <div class="book-entry-text">
-          <p class="book-entry-press">Ecco (US) · Monoray (UK) · Forthcoming</p>
-          <p class="book-entry-title">The Price of Protein</p>
-          <p class="book-entry-sub">A global history of how Big Food manufactured our hunger — and what it costs us</p>
-        </div>
-      </div>
     </div>
 
-    <!-- RECENT TALKS -->
+    <!-- TALKS -->
     <div class="writing-section" id="events">
-      <p class="section-label">Recent Talks</p>
+      <p class="section-label">Upcoming Talks</p>
+      <div class="writing-list upcoming-talks">
+        <div class="writing-item">
+          <span class="writing-item-title">Book talk: <em>Markets of Pain</em></span>
+          <span class="venue"><time datetime="2026-10-28">October 28, 2026</time> · MIT, Department of Urban Studies and Planning</span>
+        </div>
+        <div class="writing-item">
+          <span class="writing-item-title">Book talk: <em>Markets of Pain</em></span>
+          <span class="talk-details">With Alicia Puglionesi and Devin Hernandez</span>
+          <span class="venue"><time datetime="2026-11-04">November 4, 2026</time> · Greedy Reads, Remington, Baltimore</span>
+        </div>
+        <div class="writing-item">
+          <a href="https://host.jhu.edu/event/supply-side-appetite-how-big-food-engineered-our-high-protein-diets/" target="_blank" rel="noopener">“Supply-Side Appetite: How Big Food Engineered Our High-Protein Diets”</a>
+          <span class="venue"><time datetime="2026-11-05">November 5, 2026</time> · Johns Hopkins University</span>
+          <span class="talk-details">3–4:30 p.m. · Welch Library, Room 303, East Baltimore Campus</span>
+        </div>
+      </div>
+
+      <p class="section-label recent-talks-label">Recent Talks</p>
       <div class="writing-list">
+        <div class="writing-item">
+          <span class="writing-item-title">Book launch and Q&amp;A: <em>Markets of Pain</em>, with David Mayers</span>
+          <span class="venue"><em>Boston University</em> · Sept 16, 2026</span>
+        </div>
         <div class="writing-item">
           <span class="writing-item-title">"Medicinal Opium"</span>
           <span class="venue"><em>UN Commission on Narcotic Drugs</em> · March 2026</span>
@@ -851,19 +894,22 @@
             <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
               <div class="ml-form-embedContent">
                 <h4>Stay in touch</h4>
-                <p>Occasional updates when I publish something new.</p>
+                <p>Occasional notes when I publish a new book or essay.</p>
               </div>
               <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2334730/forms/187085403180762918/subscribe" data-code="" method="post" target="_blank">
                 <div class="ml-form-formContent">
                   <div class="ml-form-fieldRow ml-last-item">
                     <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email">
+                      <label for="updates-email" class="sr-only">Email address</label>
+                      <input id="updates-email" aria-label="email" aria-describedby="updates-note updates-email-error" aria-required="true" required type="email" class="form-control" name="fields[email]" placeholder="Your email address" autocomplete="email">
+                      <p id="updates-email-error" class="ml-field-error-message" role="alert"></p>
                     </div>
                   </div>
                 </div>
+                <p class="ml-server-error d-none" role="alert"></p>
                 <input type="hidden" name="ml-submit" value="1">
                 <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Subscribe</button>
+                  <button type="submit" class="primary">Keep me posted</button>
                   <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <div class="ml-form-embedSubmitLoad"></div>
                     <span class="sr-only">Loading...</span>
@@ -871,11 +917,12 @@
                 </div>
                 <input type="hidden" name="anticsrf" value="true">
               </form>
+              <p id="updates-note" class="signup-note">Unsubscribe any time.</p>
             </div>
-            <div class="ml-form-successBody row-success" style="display: none">
+            <div class="ml-form-successBody row-success" style="display: none" tabindex="-1" role="status" aria-live="polite">
               <div class="ml-form-successContent">
                 <h4>Thank you</h4>
-                <p>You're on the list. I'll be in touch when there's something to share.</p>
+                <p>Thanks for signing up. If a confirmation email arrives, follow its link to finish subscribing.</p>
               </div>
             </div>
           </div>
@@ -884,9 +931,11 @@
 
       <script>
         function ml_webform_success_41199615() {
-          var $ = ml_jQuery || jQuery;
-          $('.ml-subscribe-form-41199615 .row-success').show();
-          $('.ml-subscribe-form-41199615 .row-form').hide();
+          var container = document.getElementById('mlb2-41199615');
+          container.querySelector('.row-form').style.display = 'none';
+          var success = container.querySelector('.row-success');
+          success.style.display = 'block';
+          success.focus();
         }
       </script>
       <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
