@@ -1,7 +1,8 @@
 # Handoff: benjaminrsiegel.com Redesign
 
 ## Overview
-This is a full redesign of benjaminrsiegel.com — a personal author/historian website for Benjamin R. Siegel. The design is inspired by Carina del Valle Schorske's site: intimate, single-page feel, large photo left, conversational bio right, with scrollable sections below. The goal is a clean, literary, personal site that feels warm and human — not a sprawling academic CV.
+
+Benjamin R. Siegel’s website features his books, journalism, talks, and media appearances.
 
 ## About the Design Files
 The files in this bundle are **high-fidelity design references created in HTML** — not production code to copy directly. Your task is to recreate these designs in your existing site's codebase (likely a static HTML/CSS site managed via GitHub), preserving the visual design, typography, layout, and interactions as closely as possible.
