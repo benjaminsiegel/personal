@@ -1,37 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benjamin R. Siegel</title>
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Benjamin Robert Siegel">
-  <meta property="og:description" content="Associate Professor of History at Boston University specializing in global commodity chains and the history of capitalism">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://benjaminrsiegel.com">
-  <meta property="og:image" content="https://benjaminrsiegel.com/headshot.jpg">
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Benjamin Robert Siegel">
-  <meta name="twitter:description" content="Associate Professor of History at Boston University specializing in global commodity chains and the history of capitalism">
-  <meta name="twitter:image" content="https://benjaminrsiegel.com/headshot.jpg">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCDR7NSM8Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SCDR7NSM8Y');
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Benjamin R. Siegel</title>
+<!-- Open Graph Meta Tags -->
+<meta content="Benjamin Robert Siegel" property="og:title"/>
+<meta content="Associate Professor of History at Boston University specializing in global commodity chains and the history of capitalism" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://benjaminrsiegel.com" property="og:url"/>
+<meta content="https://benjaminrsiegel.com/headshot.jpg" property="og:image"/>
+<!-- Twitter Card Meta Tags -->
+<meta content="summary" name="twitter:card"/>
+<meta content="Benjamin Robert Siegel" name="twitter:title"/>
+<meta content="Associate Professor of History at Boston University specializing in global commodity chains and the history of capitalism" name="twitter:description"/>
+<meta content="https://benjaminrsiegel.com/headshot.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -635,309 +623,327 @@
       color: var(--mid);
       margin: 0;
     }
-  </style>
-</head>
+  
+    :root {
+      --body-size: 1rem;
+      --entry-size: calc(var(--body-size) - 1px);
+      --small-size: .75rem;
+      --title-size: 1.25rem;
+      --section-size: 1.5rem;
+    }
+    .nav-brand, .section-label, .book-entry-title, .writing-item a,
+    .writing-item-title { font-family: var(--serif); font-style: normal; text-wrap: balance; }
+    .nav-brand { letter-spacing: -.03em; line-height: 1.08; }
+    .bio-hello { font-size: var(--title-size); line-height: 1.45; letter-spacing: -.012em; }
+    .bio-text, .book-entry-sub, .talk-details,
+    #mlb2-41199615 .ml-form-embedContent p, #mlb2-41199615 .ml-form-successContent p,
+    #mlb2-41199615 .ml-fieldRow input, #mlb2-41199615 .ml-form-fieldRow input,
+    #mlb2-41199615 .signup-note { font: 400 var(--body-size)/1.65 var(--sans); }
+    .section-label { font-size: var(--section-size); font-weight: 500; letter-spacing: -.025em;
+      line-height: 1.15; text-transform: none; color: var(--mid); margin-bottom: 20px; }
+    .book-entry-title { font-size: var(--title-size); letter-spacing: -.015em; line-height: 1.15; }
+    .book-entry-sub, .talk-details { font-size: var(--entry-size); line-height: 1.5; }
+    .writing-item-title, .writing-item a { font-size: var(--title-size); letter-spacing: -.015em; line-height: 1.25; }
+    .writing-item-title em, .writing-item a em { font-style: normal; }
+    .book-entry-press, .venue, .photo-links a, .book-entry-links a, footer {
+      font-size: var(--small-size); letter-spacing: .05em; color: var(--mid); }
+    .book-entry-links a { color: var(--plum); }
+    .venue { max-width: 40%; white-space: normal; text-align: right; }
+    .book-cover-placeholder { align-self: flex-start; }
+    #mlb2-41199615 .ml-form-embedSubmit button { font-size: var(--entry-size); font-weight: 400; }
+    [id].writing-section, #books { scroll-margin-top: 72px; }
+    @media(max-width:560px) { .venue { max-width: 100%; text-align: left; } }
+
+  .talk-copy { flex: 1; min-width: 0; } .talk-copy .talk-details { display: block; margin-top: 4px; }
+  
+nav h1 { font: inherit; line-height: 1; }
+.contact-line { font: 400 var(--body-size)/1.65 var(--sans); margin-bottom: 24px; color: var(--mid); }
+.contact-line a { color: var(--plum); text-underline-offset: 2px; }
+.writing-item a { text-decoration: underline; text-decoration-color: rgba(64,9,60,.32); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+.writing-item a:hover { text-decoration-color: currentColor; }
+.book-entry:first-of-type .book-entry-text { margin-inline-start: 84px; }
+nav a:focus-visible, main a:focus-visible, main button:focus-visible, #mlb2-41199615 input:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+#mlb2-41199615 .ml-form-fieldRow input::placeholder { color: var(--mid); opacity: 1; }
+@media(max-width:560px) {
+ nav { flex-direction: column; justify-content: center; align-items: flex-start; height: 76px; padding-inline: 16px; gap: 6px; }
+ .nav-links { width: 100%; max-width: 400px; justify-content: space-between; gap: 4px; }
+ .nav-links a { display: inline-block; padding-block: 4px; font-size: .75rem; }
+ main { padding-top: 96px; }
+ [id].writing-section, #books { scroll-margin-top: 88px; }
+ .book-entry:first-of-type .book-entry-text { margin-inline-start: 0; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SCDR7NSM8Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SCDR7NSM8Y');
+  </script>
+
+  </head>
 <body>
-
 <nav>
-  <a href="#" class="nav-brand">Benjamin R. Siegel</a>
-  <ul class="nav-links">
-    <li><a href="#books">Books</a></li>
-    <li><a href="#writing">Writing</a></li>
-    <li><a href="#media">Media</a></li>
-    <li><a href="#events">Talks</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<h1><a class="nav-brand" href="#">Benjamin R. Siegel</a></h1>
+<ul class="nav-links">
+<li><a href="#books">Books</a></li><li><a href="#events">Talks</a></li>
+<li><a href="#writing">Writing</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
-
 <main>
-  <!-- PHOTO COLUMN -->
-  <div class="photo-col">
-    <div class="photo-wrap">
-      <img src="photo-informal.jpg" alt="Benjamin R. Siegel">
-    </div>
-    <div class="photo-links">
-      <a href="https://www.bu.edu/history/profile/benjamin-siegel/" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 21h18M3 10h18M3 7l9-4 9 4M5 10v11M19 10v11M9 10v11M15 10v11"/>
-        </svg>
+<!-- PHOTO COLUMN -->
+<div class="photo-col">
+<div class="photo-wrap">
+<img alt="Benjamin R. Siegel" src="photo-informal.jpg"/>
+</div>
+<div class="photo-links">
+<a href="https://www.bu.edu/history/profile/benjamin-siegel/" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20">
+<path d="M3 21h18M3 10h18M3 7l9-4 9 4M5 10v11M19 10v11M9 10v11M15 10v11"></path>
+</svg>
         Faculty Page
       </a>
-      <a href="https://www.instagram.com/benjaminsiegel/" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5"/>
-          <circle cx="12" cy="12" r="5"/>
-          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-        </svg>
+<a href="https://www.instagram.com/benjaminsiegel/" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20">
+<rect height="20" rx="5" width="20" x="2" y="2"></rect>
+<circle cx="12" cy="12" r="5"></circle>
+<circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+</svg>
         Instagram
       </a>
-      <a href="https://www.linkedin.com/in/benjamin-siegel29/" target="_blank">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="4"/>
-          <line x1="8" y1="11" x2="8" y2="17"/>
-          <line x1="8" y1="7" x2="8" y2="8"/>
-          <line x1="12" y1="17" x2="12" y2="11"/>
-          <path d="M12 13a3 3 0 0 1 6 0v4"/>
-        </svg>
+<a href="https://www.linkedin.com/in/benjamin-siegel29/" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="20">
+<rect height="20" rx="4" width="20" x="2" y="2"></rect>
+<line x1="8" x2="8" y1="11" y2="17"></line>
+<line x1="8" x2="8" y1="7" y2="8"></line>
+<line x1="12" x2="12" y1="17" y2="11"></line>
+<path d="M12 13a3 3 0 0 1 6 0v4"></path>
+</svg>
         LinkedIn
       </a>
-    </div>
-  </div>
-
-  <!-- BIO + CONTENT COLUMN -->
-  <div class="bio-col">
-    <p class="bio-hello">
+</div>
+</div>
+<!-- BIO + CONTENT COLUMN -->
+<div class="bio-col">
+<p class="bio-hello">
       I'm a historian at Boston University and a former <em>Time</em> magazine reporter, writing about the global commodity systems that have shaped modern life — from the drugs in our medicine cabinets to the food on our plates.
     </p>
-
-    <div class="bio-text">
-      <p>My new book, <a href="http://www.marketsofpain.com" target="_blank"><em>Markets of Pain: Opium, Capitalism, and the Global History of Painkillers</em></a> (Oxford University Press, 2026), is the sweeping story of how licit opium built empires, shaped global capitalism, and became the harbinger of today's opioid crisis — drawing on archives from India, Turkey, Australia, Europe, and the United States. My first book, <a href="https://www.cambridge.org/core/books/hungry-nation/106C8887E38290B84E2A4952F78EBACE" target="_blank"><em>Hungry Nation: Food, Famine, and the Making of Modern India</em></a> (Cambridge, 2018), traced how food lay at the heart of India's postcolonial nation-building project. I'm now writing <em>The Price of Protein</em> (forthcoming from Ecco in the US and Monoray in the UK), a blend of history and reportage about how Big Food manufactured our hunger for protein, and what its abundance is costing our climate, our labor, and our politics.</p>
-
-      <p>Before academia, I reported from the <em>Time</em> bureaus in Delhi and Hong Kong; my journalism and essays have appeared in <em>The New York Times</em>, <em>The Atlantic</em>, <em>Time</em>, the <em>Christian Science Monitor</em>, <em>Noema</em>, <em>Vice</em>, <em>Public Books</em>, <em>World Policy Journal</em>, and elsewhere. My academic work has been published in <em>The American Historical Review</em>, <em>Modern Asian Studies</em>, <em>Environmental History</em>, and other journals, and supported by fellowships from the American Council of Learned Societies, the Harvard Academy for International and Area Studies, and Yale's Program in Agrarian Studies.</p>
-
-      <p>I served as Associate Chair of History at Boston University from 2023 to 2025. I've spoken about my work at universities, the World Bank, and the United Nations, and at events across the United States, Canada, the UK, India, Pakistan, China, Germany, Switzerland, and Italy.</p>
-
-      <p>I live with my family and too many bicycles in Jamaica Plain, Mass., and Lecco, Italy.</p>
-
-      <p>My agent is <a href="https://www.calligraphlit.com/sarah" target="_blank">Sarah Khalil</a> at Calligraph; for other inquiries, <a href="mailto:siegelb@bu.edu">write me directly</a>.</p>
-    </div>
-
-    <!-- BOOKS -->
-    <div class="books-section" id="books">
-      <p class="section-label">Books</p>
-
-      <div class="book-entry">
-        <div class="book-cover-placeholder">Cover TBD</div>
-        <div class="book-entry-text">
-          <p class="book-entry-press">Ecco (US) · Monoray (UK) · Forthcoming</p>
-          <p class="book-entry-title">The Price of Protein</p>
-          <p class="book-entry-sub">A global history of how Big Food manufactured our hunger — and what it costs us</p>
-        </div>
-      </div>
-
-      <div class="book-entry">
-        <div class="book-cover-thumb">
-          <img src="markets-of-pain-cover.jpg" alt="Markets of Pain">
-        </div>
-        <div class="book-entry-text">
-          <p class="book-entry-press">Oxford University Press · 2026</p>
-          <p class="book-entry-title">Markets of Pain</p>
-          <p class="book-entry-sub">Opium, Capitalism, and the Global History of Painkillers</p>
-          <div class="book-entry-links">
-            <a href="http://www.marketsofpain.com" target="_blank">Book Website</a>
-            <a href="https://global.oup.com/academic/product/markets-of-pain-9780197527825" target="_blank">Oxford UP</a>
-            <a href="https://www.amazon.com/Markets-Pain-Capitalism-History-Painkillers/dp/0197527825" target="_blank">Amazon</a>
-            <a href="https://bookshop.org/p/books/markets-of-pain-opium-capitalism-and-the-global-history-of-painkillers-associate-professor-of-history-benjamin-robert-siegel/e89ecfc619100379?ean=9780197527825&next=t" target="_blank">Bookshop</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-entry">
-        <div class="book-cover-thumb">
-          <img src="hungry-nation-cover.jpg" alt="Hungry Nation">
-        </div>
-        <div class="book-entry-text">
-          <p class="book-entry-press">Cambridge University Press · 2018</p>
-          <p class="book-entry-title">Hungry Nation</p>
-          <p class="book-entry-sub">Food, Famine, and the Making of Modern India</p>
-          <div class="book-entry-links">
-            <a href="https://www.cambridge.org/core/books/hungry-nation/106C8887E38290B84E2A4952F78EBACE#fndtn-information" target="_blank">Cambridge UP</a>
-            <a href="https://www.amazon.com/Hungry-Nation-Famine-Making-Modern/dp/1108441963" target="_blank">Amazon</a>
-            <a href="https://bookshop.org/p/books/hungry-nation-benjamin-robert-siegel/d3ada54dca7eb70c" target="_blank">Bookshop</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TALKS -->
-    <div class="writing-section" id="events">
-      <p class="section-label">Upcoming Talks</p>
-      <div class="writing-list upcoming-talks">
-        <div class="writing-item">
-          <span class="writing-item-title">Book talk: <em>Markets of Pain</em></span>
-          <span class="venue"><time datetime="2026-10-28">October 28, 2026</time> · MIT, Department of Urban Studies and Planning</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">Book talk: <em>Markets of Pain</em></span>
-          <span class="talk-details">With Alicia Puglionesi and Devin Hernandez</span>
-          <span class="venue"><time datetime="2026-11-04">November 4, 2026</time> · Greedy Reads, Remington, Baltimore</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://host.jhu.edu/event/supply-side-appetite-how-big-food-engineered-our-high-protein-diets/" target="_blank" rel="noopener">“Supply-Side Appetite: How Big Food Engineered Our High-Protein Diets”</a>
-          <span class="venue"><time datetime="2026-11-05">November 5, 2026</time> · Johns Hopkins University</span>
-          <span class="talk-details">3–4:30 p.m. · Welch Library, Room 303, East Baltimore Campus</span>
-        </div>
-      </div>
-
-      <p class="section-label recent-talks-label">Recent Talks</p>
-      <div class="writing-list">
-        <div class="writing-item">
-          <span class="writing-item-title">Book launch and Q&amp;A: <em>Markets of Pain</em>, with David Mayers</span>
-          <span class="venue"><em>Boston University</em> · Sept 16, 2026</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Medicinal Opium"</span>
-          <span class="venue"><em>UN Commission on Narcotic Drugs</em> · March 2026</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Asia's Green Revolutions"</span>
-          <span class="venue"><em>MIT</em> · Feb 2026</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Exhibiting China: The Legacies of the Nineteenth-Century China Trade"</span>
-          <span class="venue"><em>Boston Athenaeum</em> · Sept 2025</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Automatic for the People?: Labor, Machines, and Ecology in Modern India"</span>
-          <span class="venue"><em>IIT Bombay</em> · May 2025</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">Panelist, Global Food Security Conference</span>
-          <span class="venue"><em>Yale Jackson School</em> · April 2025</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Automatic for the People?"</span>
-          <span class="venue"><em>U Penn CASI</em> · Feb 2025</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"How Pain Came to Matter"</span>
-          <span class="venue"><em>Harvard Medical School</em> · May 2024</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Pain, Poppies, and Power"</span>
-          <span class="venue"><em>University of Basel</em> · March 2023</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- WRITING -->
-    <div class="writing-section" id="writing">
-      <p class="section-label">Writing</p>
-      <div class="writing-list">
-        <div class="writing-item">
-          <a href="https://www.theatlantic.com/science/2026/11/salmon-farming/689418/" target="_blank">"Is This the End of Cheap Salmon?"</a>
-          <span class="venue"><em>The Atlantic</em> · 2026</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://www.noemamag.com/the-end-of-extraction/" target="_blank">"The End of Extraction"</a>
-          <span class="venue"><em>Noema</em> · 2026</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://www.nytimes.com/2026/05/13/opinion/purdue-pharma-opioids.html" target="_blank">"Purdue Pharma Is Gone. What Comes Next Could Be Worse"</a>
-          <span class="venue"><em>The New York Times</em> · 2026</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Laboratory of Empire"</span>
-          <span class="venue"><em>J. of Imperial and Commonwealth History</em> · 2026</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://academic.oup.com/envhis/advance-article/doi/10.1093/envhis/emaa060/6032735?guestAccessKey=67de8038-2cb3-453b-a719-92cf40e702f1" target="_blank">"Weeds and Power in Indian Environmental History"</a>
-          <span class="venue"><em>Environmental History</em> · 2021</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://doi.org/10.1093/ahr/rhaa233" target="_blank">"The Kibbutz and the Ashram"</a>
-          <span class="venue"><em>American Historical Review</em> · 2020</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Beneficent Destinations"</span>
-          <span class="venue"><em>Indian Econ. and Social History Rev.</em> · 2020</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://www.publicbooks.org/whither-agriculture-the-green-revolution-50/" target="_blank">"Whither Agriculture? The Green Revolution at 50"</a>
-          <span class="venue"><em>Public Books</em> · 2019</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://www.vice.com/en/article/indian-drugs-american-addiction/" target="_blank">"The US Opioid Crisis Started in India"</a>
-          <span class="venue"><em>Vice</em> · 2018</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Self-Help Which Ennobles a Nation"</span>
-          <span class="venue"><em>Modern Asian Studies</em> · 2016</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- MEDIA -->
-    <div class="writing-section" id="media">
-      <p class="section-label">Media</p>
-      <div class="writing-list">
-        <div class="writing-item">
-          <a href="https://www.bu.edu/articles/2026/how-the-legal-opium-market-led-to-an-opioid-crisis/" target="_blank">"How the Legal Opium Market Shaped Global Trade — and Led to an Opioid Crisis"</a>
-          <span class="venue"><em>The Brink</em> · April 2026</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Around the Bowl in 75 Years"</span>
-          <span class="venue"><em>The Economic Times</em> · August 2022</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"What Is the Greatest Threat to Human Health from Climate Change?"</span>
-          <span class="venue"><em>BU Arts and Sciences</em> · September 2022</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://podcasts.apple.com/us/podcast/food-in-post-independence-india/id612994662?i=1000526259202" target="_blank">"Food in Post-Independence India"</a>
-          <span class="venue"><em>Eat This!</em> · June 2021</span>
-        </div>
-        <div class="writing-item">
-          <span class="writing-item-title">"Tracking the Path of the Opioid Crisis"</span>
-          <span class="venue"><em>Bostonia</em> · Spring 2020</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://newbooksnetwork.com/benjamin-r-siegel-hungry-nation-food-famine-and-the-making-of-modern-india-cambridge-up-2018/" target="_blank">"Hungry Nation"</a>
-          <span class="venue"><em>New Books Network</em> · October 2018</span>
-        </div>
-        <div class="writing-item">
-          <a href="https://soundcloud.com/syntalk/tkop-the-kinds-of-pain-syntalk" target="_blank">"The Kinds of Pain"</a>
-          <span class="venue"><em>Syntalk</em> · September 2017</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="writing-section" id="contact">
-      <p class="section-label">Contact</p>
-
-      <div id="mlb2-41199615" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41199615">
-        <div class="ml-form-align-center">
-          <div class="ml-form-embedWrapper embedForm">
-            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-              <div class="ml-form-embedContent">
-                <h4>Stay in touch</h4>
-                <p>Occasional notes when I publish a new book or essay.</p>
-              </div>
-              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2334730/forms/187085403180762918/subscribe" data-code="" method="post" target="_blank">
-                <div class="ml-form-formContent">
-                  <div class="ml-form-fieldRow ml-last-item">
-                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <label for="updates-email" class="sr-only">Email address</label>
-                      <input id="updates-email" aria-label="email" aria-describedby="updates-note updates-email-error" aria-required="true" required type="email" class="form-control" name="fields[email]" placeholder="Your email address" autocomplete="email">
-                      <p id="updates-email-error" class="ml-field-error-message" role="alert"></p>
-                    </div>
-                  </div>
-                </div>
-                <p class="ml-server-error d-none" role="alert"></p>
-                <input type="hidden" name="ml-submit" value="1">
-                <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Keep me posted</button>
-                  <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <div class="ml-form-embedSubmitLoad"></div>
-                    <span class="sr-only">Loading...</span>
-                  </button>
-                </div>
-                <input type="hidden" name="anticsrf" value="true">
-              </form>
-              <p id="updates-note" class="signup-note">Unsubscribe any time.</p>
-            </div>
-            <div class="ml-form-successBody row-success" style="display: none" tabindex="-1" role="status" aria-live="polite">
-              <div class="ml-form-successContent">
-                <h4>Thank you</h4>
-                <p>Thanks for signing up. If a confirmation email arrives, follow its link to finish subscribing.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <script>
+<div class="bio-text">
+<p>My book <a href="https://www.marketsofpain.com"><em>Markets of Pain</em></a> follows the legal opium trade through India, Turkey, Australia, Europe, and the United States. It asks how that trade built empires, shaped global capitalism, and helped set the stage for today’s opioid crisis. My first book, <a href="https://www.cambridge.org/core/books/hungry-nation/106C8887E38290B84E2A4952F78EBACE"><em>Hungry Nation</em></a>, traces how food shaped India’s postcolonial nation-building project.</p><p>I’m now writing <em>The Price of Protein</em>, a blend of history and reportage about how Big Food manufactured our hunger for protein, and what its abundance is costing our climate, our labor, and our politics.</p>
+<p>Before academia, I reported from the <em>Time</em> bureaus in Delhi and Hong Kong; my journalism and essays have appeared in <em>The New York Times</em>, <em>The Atlantic</em>, <em>Time</em>, the <em>Christian Science Monitor</em>, <em>Noema</em>, <em>Vice</em>, <em>Public Books</em>, <em>World Policy Journal</em>, and elsewhere. My academic work has been published in <em>The American Historical Review</em>, <em>Modern Asian Studies</em>, <em>Environmental History</em>, and other journals, and supported by fellowships from the American Council of Learned Societies, the Harvard Academy for International and Area Studies, and Yale's Program in Agrarian Studies.</p>
+<p>I served as Associate Chair of History at Boston University from 2023 to 2025. I've spoken about my work at universities, the World Bank, and the United Nations, and at events across the United States, Canada, the UK, India, Pakistan, China, Germany, Switzerland, and Italy.</p>
+<p>I live with my family and too many bicycles in Jamaica Plain, Mass., and Lecco, Italy.</p>
+</div>
+<!-- BOOKS -->
+<div class="books-section" id="books">
+<h2 class="section-label">Books</h2>
+<div class="book-entry">
+<div class="book-entry-text">
+<p class="book-entry-press">Ecco (US) · Monoray (UK) · Forthcoming</p>
+<h3 class="book-entry-title">The Price of Protein</h3>
+<p class="book-entry-sub">A global history of how Big Food manufactured our hunger — and what it costs us</p>
+</div>
+</div>
+<div class="book-entry">
+<div class="book-cover-thumb">
+<img alt="Markets of Pain" src="markets-of-pain-cover.jpg"/>
+</div>
+<div class="book-entry-text">
+<p class="book-entry-press">Oxford University Press · 2026</p>
+<h3 class="book-entry-title">Markets of Pain</h3>
+<p class="book-entry-sub">Opium, Capitalism, and the Global History of Painkillers</p>
+<div class="book-entry-links">
+<a href="https://www.marketsofpain.com" target="_blank">Book Website</a>
+<a href="https://global.oup.com/academic/product/markets-of-pain-9780197527825" target="_blank">Oxford UP</a>
+<a href="https://www.amazon.com/Markets-Pain-Capitalism-History-Painkillers/dp/0197527825" target="_blank">Amazon</a>
+<a href="https://bookshop.org/p/books/markets-of-pain-opium-capitalism-and-the-global-history-of-painkillers-associate-professor-of-history-benjamin-robert-siegel/e89ecfc619100379?ean=9780197527825&amp;next=t" target="_blank">Bookshop</a>
+</div>
+</div>
+</div>
+<div class="book-entry">
+<div class="book-cover-thumb">
+<img alt="Hungry Nation" src="hungry-nation-cover.jpg"/>
+</div>
+<div class="book-entry-text">
+<p class="book-entry-press">Cambridge University Press · 2018</p>
+<h3 class="book-entry-title">Hungry Nation</h3>
+<p class="book-entry-sub">Food, Famine, and the Making of Modern India</p>
+<div class="book-entry-links">
+<a href="https://www.cambridge.org/core/books/hungry-nation/106C8887E38290B84E2A4952F78EBACE#fndtn-information" target="_blank">Cambridge UP</a>
+<a href="https://www.amazon.com/Hungry-Nation-Famine-Making-Modern/dp/1108441963" target="_blank">Amazon</a>
+<a href="https://bookshop.org/p/books/hungry-nation-benjamin-robert-siegel/d3ada54dca7eb70c" target="_blank">Bookshop</a>
+</div>
+</div>
+</div>
+</div>
+<!-- TALKS -->
+<div class="writing-section" id="events">
+<h2 class="section-label">Recent Talks</h2>
+<div class="writing-list"><div class="writing-item">
+<a href="https://host.jhu.edu/event/supply-side-appetite-how-big-food-engineered-our-high-protein-diets/" rel="noopener" target="_blank">Supply-Side Appetite: How Big Food Engineered Our High-Protein Diets</a>
+<span class="venue">Johns Hopkins University</span>
+</div><div class="writing-item">
+<div class="talk-copy"><span class="writing-item-title">Book talk: <em>Markets of Pain</em></span><span class="talk-details">With Alicia Puglionesi and Devin Hernandez</span></div>
+<span class="venue">Greedy Reads, Baltimore · 2026</span>
+</div><div class="writing-item">
+<span class="writing-item-title">Book talk: <em>Markets of Pain</em></span>
+<span class="venue">MIT, Department of Urban Studies and Planning · 2026</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Book launch and Q&amp;A: <em>Markets of Pain</em>, with David Mayers</span>
+<span class="venue">Boston University · 2026</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Medicinal Opium</span>
+<span class="venue">UN Commission on Narcotic Drugs · 2026</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Asia's Green Revolutions</span>
+<span class="venue">MIT · 2026</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Exhibiting China: The Legacies of the Nineteenth-Century China Trade</span>
+<span class="venue">Boston Athenaeum · 2025</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Automatic for the People?: Labor, Machines, and Ecology in Modern India</span>
+<span class="venue">IIT Bombay · 2025</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Panelist, Global Food Security Conference</span>
+<span class="venue">Yale Jackson School · 2025</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Automatic for the People?</span>
+<span class="venue">U Penn CASI · 2025</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">How Pain Came to Matter</span>
+<span class="venue">Harvard Medical School · 2024</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Pain, Poppies, and Power</span>
+<span class="venue">University of Basel · 2023</span>
+</div>
+</div>
+</div>
+<!-- WRITING -->
+<div class="writing-section" id="writing">
+<h2 class="section-label">Writing</h2>
+<div class="writing-list">
+<div class="writing-item">
+<a href="https://www.noemamag.com/the-end-of-extraction/" target="_blank">The End of Extraction</a>
+<span class="venue"><em>Noema</em> · 2026</span>
+</div><div class="writing-item">
+<a href="https://www.theatlantic.com/science/2026/11/salmon-farming/689418/" target="_blank">Is This the End of Cheap Salmon?</a>
+<span class="venue"><em>The Atlantic</em> · 2026</span>
+</div>
+<div class="writing-item">
+<a href="https://www.nytimes.com/2026/05/13/opinion/purdue-pharma-opioids.html" target="_blank">Purdue Pharma Is Gone. What Comes Next Could Be Worse</a>
+<span class="venue"><em>The New York Times</em> · 2026</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Laboratory of Empire</span>
+<span class="venue"><em>Journal of Imperial and Commonwealth History</em> · 2026</span>
+</div>
+<div class="writing-item">
+<a href="https://academic.oup.com/envhis/advance-article/doi/10.1093/envhis/emaa060/6032735?guestAccessKey=67de8038-2cb3-453b-a719-92cf40e702f1" target="_blank">Weeds and Power in Indian Environmental History</a>
+<span class="venue"><em>Environmental History</em> · 2021</span>
+</div>
+<div class="writing-item">
+<a href="https://doi.org/10.1093/ahr/rhaa233" target="_blank">The Kibbutz and the Ashram</a>
+<span class="venue"><em>American Historical Review</em> · 2020</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Beneficent Destinations</span>
+<span class="venue"><em>Indian Economic and Social History Review</em> · 2020</span>
+</div>
+<div class="writing-item">
+<a href="https://www.publicbooks.org/whither-agriculture-the-green-revolution-50/" target="_blank">Whither Agriculture? The Green Revolution at 50</a>
+<span class="venue"><em>Public Books</em> · 2019</span>
+</div>
+</div>
+</div>
+<!-- MEDIA -->
+<div class="writing-section" id="media">
+<h2 class="section-label">Media</h2>
+<div class="writing-list"><div class="writing-item"><a href="https://www.marketplace.org/story/2026/11/20/salmon-supply-flounders-as-fisheries-struggle-to-meet-demand" rel="noopener" target="_blank">Salmon Supply Flounders as Fisheries Struggle to Meet Demand</a><span class="venue"><em>Marketplace</em> · November 20, 2026</span></div>
+<div class="writing-item">
+<a href="https://www.bu.edu/articles/2026/how-the-legal-opium-market-led-to-an-opioid-crisis/" target="_blank">How the Legal Opium Market Shaped Global Trade — and Led to an Opioid Crisis</a>
+<span class="venue"><em>The Brink</em> · April 2026</span>
+</div><div class="writing-item">
+<span class="writing-item-title">What Is the Greatest Threat to Human Health from Climate Change?</span>
+<span class="venue"><em>BU Arts and Sciences</em> · September 2022</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Around the Bowl in 75 Years</span>
+<span class="venue"><em>The Economic Times</em> · August 2022</span>
+</div>
+<div class="writing-item">
+<a href="https://podcasts.apple.com/us/podcast/food-in-post-independence-india/id612994662?i=1000526259202" target="_blank">Food in Post-Independence India</a>
+<span class="venue"><em>Eat This!</em> · June 2021</span>
+</div>
+<div class="writing-item">
+<span class="writing-item-title">Tracking the Path of the Opioid Crisis</span>
+<span class="venue"><em>Bostonia</em> · Spring 2020</span>
+</div>
+<div class="writing-item">
+<a href="https://newbooksnetwork.com/benjamin-r-siegel-hungry-nation-food-famine-and-the-making-of-modern-india-cambridge-up-2018/" target="_blank">Hungry Nation</a>
+<span class="venue"><em>New Books Network</em> · October 2018</span>
+</div>
+<div class="writing-item">
+<a href="https://soundcloud.com/syntalk/tkop-the-kinds-of-pain-syntalk" target="_blank">The Kinds of Pain</a>
+<span class="venue"><em>Syntalk</em> · September 2017</span>
+</div>
+</div>
+</div>
+<!-- CONTACT -->
+<div class="writing-section" id="contact">
+<h2 class="section-label">Contact</h2><p class="contact-line">For literary inquiries, contact my agent, <a href="https://www.calligraphlit.com/sarah">Sarah Khalil at Calligraph</a>. For other inquiries, <a href="mailto:siegelb@bu.edu">email me directly</a>.</p>
+<div class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-41199615" id="mlb2-41199615">
+<div class="ml-form-align-center">
+<div class="ml-form-embedWrapper embedForm">
+<div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+<div class="ml-form-embedContent">
+<h4>Stay in touch</h4>
+<p>Occasional notes when I publish a new book or essay.</p>
+</div>
+<form action="https://assets.mailerlite.com/jsonp/2334730/forms/187085403180762918/subscribe" class="ml-block-form" data-code="" method="post" target="_blank">
+<div class="ml-form-formContent">
+<div class="ml-form-fieldRow ml-last-item">
+<div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+<label class="sr-only" for="updates-email">Email address</label>
+<input aria-describedby="updates-note updates-email-error" aria-label="email" aria-required="true" autocomplete="email" class="form-control" id="updates-email" name="fields[email]" placeholder="Your email address" required="" type="email"/>
+<p class="ml-field-error-message" id="updates-email-error" role="alert"></p>
+</div>
+</div>
+</div>
+<p class="ml-server-error d-none" role="alert"></p>
+<input name="ml-submit" type="hidden" value="1"/>
+<div class="ml-form-embedSubmit">
+<button class="primary" type="submit">Keep me posted</button>
+<button class="loading" disabled="disabled" style="display: none;" type="button">
+<div class="ml-form-embedSubmitLoad"></div>
+<span class="sr-only">Loading...</span>
+</button>
+</div>
+<input name="anticsrf" type="hidden" value="true"/>
+</form>
+<p class="signup-note" id="updates-note">Unsubscribe any time.</p>
+</div>
+<div aria-live="polite" class="ml-form-successBody row-success" role="status" style="display: none" tabindex="-1">
+<div class="ml-form-successContent">
+<h4>Thank you</h4>
+<p>Thanks for signing up. If a confirmation email arrives, follow its link to finish subscribing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
         function ml_webform_success_41199615() {
           var container = document.getElementById('mlb2-41199615');
           container.querySelector('.row-form').style.display = 'none';
@@ -946,16 +952,13 @@
           success.focus();
         }
       </script>
-      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
-      <script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>
         fetch("https://assets.mailerlite.com/jsonp/2334730/forms/187085403180762918/takel")
       </script>
-    </div>
-
-  </div>
+</div>
+</div>
 </main>
-
 <footer>© 2026 Benjamin R. Siegel</footer>
-
 </body>
 </html>
